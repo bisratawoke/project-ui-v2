@@ -26,12 +26,12 @@ function SideNavBar():React.ReactElement {
 
                         e.preventDefault();
 
-                        dispatch({type:ACTIONS.SET_CURRENT_SERVICE,payload:state.services.frontend.name})
+                        dispatch({type:ACTIONS.SET_CURRENT_SERVICE,payload:state.services.deploy.name})
 
                     }}
                 
                 > 
-                    <span className="font-sans font-normal text-1xl text-gray-400 hover:text-red-400">Frontend service</span>
+                    <span className="font-sans font-normal text-1xl text-gray-400 hover:text-red-400">Deploy</span>
 
                 </div>
 
@@ -43,14 +43,14 @@ function SideNavBar():React.ReactElement {
 
                         e.preventDefault();
 
-                        dispatch({type:ACTIONS.SET_CURRENT_SERVICE,payload:state.services.backend.name})
+                        dispatch({type:ACTIONS.SET_CURRENT_SERVICE,payload:state.services.monitor.name})
 
 
                     }}
 
                 >
                     
-                    <span className="font-sans font-normal text-1xl text-gray-400 hover:text-red-400">Backend service</span>
+                    <span className="font-sans font-normal text-1xl text-gray-400 hover:text-red-400">monitor</span>
 
                 </div>
 

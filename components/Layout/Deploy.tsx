@@ -1,7 +1,9 @@
 import React,{useContext,useEffect,useState} from 'react';
 import {Context,actionType,ACTIONS} from '../state/StateMan';
-import FrontendNotActive from './FrontendNotActive';
-const Frontend = ():React.ReactElement => {
+import DeployNotActive from './DeployNotActive';
+import Spinner from './Spinner';
+
+const Deploy = ():React.ReactElement => {
 	
 	const {state,dispatch} = useContext(Context);
 	
@@ -69,7 +71,7 @@ const Frontend = ():React.ReactElement => {
 	}
 	
 	
-	if(state.services.frontend.active) {
+	if(state.services.deploy.active) {
 	
 	return (
 	
@@ -83,15 +85,15 @@ const Frontend = ():React.ReactElement => {
 	
 	
 	}
-	else if(state.services.frontend.active === false) {
+	else if(state.services.deploy.active === false) {
 	
 	
 	
 		return (
 	
 	   	  <div className="col-start-1 col-end-13 flex">
-			<FrontendNotActive />
-			</div>
+			<DeployNotActive />
+		</div>
    	  	)
 	
 	}
@@ -100,8 +102,8 @@ const Frontend = ():React.ReactElement => {
 	
 		return (
 	
-	    <div className="col-start-2 col-end-13 border-t-2 border-b-2">
-               loading
+	    <div className="col-start-1 col-end-13 border-t-2 border-b-2 flex">
+               <Spinner />
             </div>
 
 	
@@ -114,4 +116,4 @@ const Frontend = ():React.ReactElement => {
 
 
 }
-export default Frontend;
+export default Deploy;

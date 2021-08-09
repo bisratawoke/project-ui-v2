@@ -21,6 +21,10 @@ export interface state {
     proj_pub_id:string;
 
     proj_name:string;
+    
+    domain_name:string;
+    
+    statusApiUrl:string;
 
 
 }
@@ -28,9 +32,9 @@ export interface state {
 
 export interface services{
 
-    frontend:service;
+    deploy:service;
     
-    backend:service;
+    monitor:service;
 
 }
 
@@ -57,12 +61,16 @@ export const init:state = {
     proj_pub_id:null,
 
     proj_name:null,
-
+    
+    domain_name:null,
+	
+    statusApiUrl:'localhost:8000',
+    
     services:{
 
-        frontend:{
+        deploy:{
 
-            name:'Frontend',
+            name:'deploy',
 
             active:null,
 
@@ -70,9 +78,9 @@ export const init:state = {
 
         },
 
-        backend:{
+        monitor:{
 
-            name:'Backend',
+            name:'monitor',
 
             active:null,
 
@@ -80,6 +88,7 @@ export const init:state = {
         },
 
     },
+   
 
     currentService:'splash'
 
@@ -234,9 +243,9 @@ export const reducer = (state:state,action:action):state => {
          		
          		...state.services,
          		
-         		frontend:{
+         		deploy:{
          		
-         			...state.services.frontend,
+         			...state.services.deploy,
          			
          			active:action.payload
          		}

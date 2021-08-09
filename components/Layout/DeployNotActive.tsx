@@ -1,7 +1,7 @@
 import {ReactElement,useState,useContext,useRef,useEffect} from 'react';
 import {Context,ACTIONS} from '../state/StateMan';
 
-const FrontendNotActive = ():ReactElement => {
+const DeployNotActive = ():ReactElement => {
 	const {state,dispatch} = useContext(Context);
 	const [showForm,setShowForm] = useState<null | boolean >(false);
 	const [mssg,setMssg] = useState<null | string >(null);
@@ -120,4 +120,4 @@ const FrontendNotActive = ():ReactElement => {
 };
 
 
-export default FrontendNotActive;
+export default DeployNotActive;
